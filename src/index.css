@@ -1,69 +1,135 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+@font-face {
+  font-family: "Glimer-Outlined";
+  /* src: url(./assets/Gilmer-Font/Gilmer\ Outline.otf); */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+@font-face {
+  font-family: "Glimer-Bold";
+  /* src: url(./assets/Gilmer-Font/Gilmer\ Bold.woff); */
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+@font-face {
+  font-family: "Glimer-Heavy";
+  /* src: url(./assets/Gilmer-Font/Gilmer\ Heavy.otf); */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+@font-face {
+  font-family: "Glimer-Light";
+  /* src: url(./assets/Gilmer-Font/Gilmer\ Light.otf); */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+@font-face {
+  font-family: "Glimer-Medium";
+  /* src: url(./assets/Gilmer-Font/Gilmer\ Medium.otf); */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@font-face {
+  font-family: "Glimer-Regular";
+  /* src: url(./assets/Gilmer-Font/Gilmer\ Regular.otf); */
+}
+
+@layer base {
+  html,
+  body {
+    background-color: #4b153b;
   }
-  a:hover {
-    color: #747bff;
+
+  .img {
+    will-change: scale;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .img-container {
+    will-change: width;
   }
+
+  .container {
+    will-change: visibility;
+  }
+
+  .cursor {
+    pointer-events: none;
+  }
+
+  .cursor__ball {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .img-container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: #420fe7;
+  }
+}
+
+.MuiTooltip-tooltip,
+.MuiTooltip-tooltipPlacementRight,
+.css-1spb1s5 {
+  background-color: #222 !important;
+  color: white !important;
+  border-radius: 50px !important;
+  padding: 1rem !important;
+  font-size: 0.8rem !important;
+  font-family: "Glimer-Regular", sans-serif !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.MuiTooltip-popper[data-popper-placement*="right"]
+  .css-ja5taz-MuiTooltip-tooltip {
+  transform: translateY(-20px) !important;
+}
+
+#tech-stack::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(hsla(0, 0%, 100%, 0), #4613e6 60%);
+}
+
+#tech-stack::after {
+  z-index: -10;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(hsla(0, 0%, 100%, 0), #4613e6 96%);
+}
+
+#tech-stack {
+  background: url(./assets/images/lines.svg);
+  background-position: right;
+  background-size: cover;
+  background-repeat: repeat-x;
+}
+
+@media screen and (min-width: 1280px) {
+  #tech-stack {
+    /* background: url(./assets/images/lines.svg); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+  }
+}
+
+#projects {
+  background: linear-gradient(0deg, rgba(70, 19, 230, 1) 0%, #420fe7 90%);
+}
+
+#contact-section {
+  background: linear-gradient(0deg, #420fe7 0%, rgba(70, 19, 230, 1) 95%);
 }
