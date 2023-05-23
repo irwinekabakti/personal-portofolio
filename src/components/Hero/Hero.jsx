@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+// import profilePhoto from "../../assets/images/tarun.png";
+import profilePhoto from "../../assets/images/irwin.png";
 import Tooltip from "@mui/material/Tooltip";
 import { Fade } from "@mui/material";
 import { motion } from "framer-motion";
+import AnimatedLetters from "../AnimatedLetters/AnimatedLetters";
 import { Player } from "@lottiefiles/react-lottie-player";
-// import profilePhoto from "../../assets/images/tarun.png";
-// import AnimatedLetters from "../AnimatedLetters";
-// import FloatingIcons from "../FloatingIcons";
+import FloatingIcons from "../FloatingIcons/FloatingIcons";
 
 const phrases = [
   "Hey, click me",
@@ -18,8 +19,7 @@ const phrases = [
   "still playing with this? 😂",
   "you can stop now.",
   "seriously.",
-  "Lu sok asik bangsat !",
-  // "checkout the website now ffs!",
+  "checkout the website now ffs!",
 ];
 
 const letters = [
@@ -32,6 +32,7 @@ const letters = [
   "🚀",
 ];
 
+// const title = ["Hello!", "I'm", "Tarun"];
 const title = ["Hello!", "I'm", "Irwin"];
 
 const Hero = () => {
@@ -46,7 +47,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="w-full cursor-default bg-[#4b153b] xl:px-44 lg:px-40 sm:pt-48 sm:pb-0 pt-28 md:px-32 sm:px-28 vvs:px-12 px-10">
+    <section className="w-full cursor-default bg-[#420fe7] xl:px-44 lg:px-40 sm:pt-48 sm:pb-0 pt-28 md:px-32 sm:px-28 vvs:px-12 px-10">
       <div className="hero-container flex flex-col">
         <motion.div
           animate={{ opacity: 1 }}
@@ -61,8 +62,9 @@ const Hero = () => {
               TransitionProps={{ timeout: 300 }}>
               <div>
                 <img
-                  // src={profilePhoto}
-                  alt="Tarun Sharma"
+                  src={profilePhoto}
+                  // alt="Tarun Sharma"
+                  alt="img-profile"
                   onClick={handlePhrases}
                   id="profilePhoto"
                   className="rounded-full !z-10 lg:h-20 lg:w-20 md:h-16 md:w-16 vvs:h-14 vvs:w-14 w-12 h-12 hover:scale-[1.05] hover:shadow-custom1 hover:-rotate-12 transition-all duration-300 ease-in-out cursor-pointer"
@@ -82,12 +84,11 @@ const Hero = () => {
         <div>
           <div className="mt-10 mb-8">
             <h1 className="text-white/70 font-Glimer-Outlined !z-10 2xl:text-[6.5rem] xl:text-[6.2rem] lg:text-[5rem] md:text-[3.5rem] sm:text-[3rem] vvs:text-[2.3rem] text-[2.2rem] tracking-normal xl:leading-[120px] md:leading-[80px] lg:leading-[100px] sm:leading-[80px] vvs:leading-[60px] leading-[40px]">
-              {/* <AnimatedLetters letters={title}
-              /> */}
+              <AnimatedLetters letters={title} />
             </h1>
 
             <h2 className=" text-white !z-10  font-Glimer-Bold font-extrabold  2xl:text-[5.5rem] xl:text-[5rem] lg:text-[3.5rem] md:text-[2.6rem] sm:text-[2.2rem] vvs:text-[1.5rem] text-[1.4rem] tracking-normal 2xl:leading-[120px] lg:leading-[100px] md:leading-[70px] sm:leading-[50px] leading-[33px]">
-              {/* <AnimatedLetters letters={letters} /> */}
+              <AnimatedLetters letters={letters} />
             </h2>
           </div>
 
@@ -117,7 +118,7 @@ const Hero = () => {
               </div>
             </div>
           </motion.div>
-          {/* <FloatingIcons /> */}
+          <FloatingIcons />
         </div>
       </div>
     </section>

@@ -1,17 +1,18 @@
-import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
-import "./App.css";
+// import "./App.css";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
 import Hero from "./components/Hero/Hero";
+import Projects from "./components/Projects/Projects";
+import TechStack from "./components/TechStack/TechStack";
+import Contact from "./components/Contact/Contact";
 
 const App = () => {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <CustomCursor />
       <Hero />
+      {/* <Projects />
+      <TechStack /> */}
+      <Contact />
     </>
   );
 };
